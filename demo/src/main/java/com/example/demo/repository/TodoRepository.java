@@ -11,4 +11,10 @@ public interface TodoRepository extends CrudRepository<TodoListEntity,String>{
 
     @Override
     Optional<TodoListEntity> findById(String user_id);
+
+    @Override
+    <S extends TodoListEntity> S save(S entity);
+
+    @Override
+    void deleteById(String user_id);
 }
