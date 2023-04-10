@@ -109,6 +109,8 @@ public class TodoServiceImpl implements TodoService{
             log.info("로그인 승인");
             todoMap.put("Login","승인");
             todoMap.put("user_id",id);
+            todoMap.put("ID","OK");
+            todoMap.put("password","OK");
             todoMap.put("HTTPStatusCode",HttpStatus.OK);
 
             log.info("Service loginMember 호출 종료!");
@@ -118,6 +120,7 @@ public class TodoServiceImpl implements TodoService{
         {
             log.info("password 불일치");
             todoMap.put("Login","미승인");
+            todoMap.put("ID","OK");
             todoMap.put("password","Error");
             todoMap.put("HTTPStatusCode",HttpStatus.NOT_FOUND);
 

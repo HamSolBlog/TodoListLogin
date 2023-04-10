@@ -16,9 +16,8 @@ public class TodoController {
 
     @Autowired
     TodoService todoService;
-
     @GetMapping("/selectID")
-    public Map<String, Object> findID(@RequestParam("id") String id){
+    public Map<String, Object> findID(@RequestParam("user_id") String id){
 
         log.info("Controller 호출 완료! 파라미터 : " + id); // default
 
@@ -38,7 +37,7 @@ public class TodoController {
         log.info("Controller 호출 종료! 파라미터 : " + testMap); // default
         return testMap;
     }
-    @GetMapping("/loginMember")
+    @PostMapping("/loginMember")
     public Map<String, Object> loginMember(@RequestBody TodoListEntity todoListEntity){
 
         log.info("Controller 호출 완료! 파라미터 : " + todoListEntity.getUser_id() + " , " + todoListEntity.getUser_password() + " , " + todoListEntity.getUser_email());
